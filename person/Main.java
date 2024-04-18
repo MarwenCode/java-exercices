@@ -32,6 +32,8 @@ public class Main {
         System.out.println(ageMax);
 
         System.out.println("Number of persons aged  " + givenAge + " are " + coutAgeabove);
+        System.out.println("Oldest person: " + oldestPerson(person).getNom() + " " + oldestPerson(person).getprenom() + " (Age: " + oldestPerson(person).getAge() + ")");
+
 
     }
 
@@ -46,6 +48,17 @@ public class Main {
         }
         return count;
     }
+
+    public static Person oldestPerson(Person[] persons) {
+        int maxIdx = 0;
+        for (int i = 1; i < persons.length; i++) {
+            if (persons[i].getAge() > persons[maxIdx].getAge()) {
+                maxIdx = i;
+            }
+        }
+        return persons[maxIdx];
+    }
+    
     
 
 }
