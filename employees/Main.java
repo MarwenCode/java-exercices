@@ -40,8 +40,17 @@ public class Main {
 
         Employee employSalary = new Employee("alexy", 3, 2500);
         System.out.println("Bonus employSalary: " + employSalary.calculateBonus(10));
-        System.out.println("increment salary: " + employSalary.claculauteIncrement());
+        System.out.println("increment salary: " + employSalary.calculateIncrement());
         System.out.println(" updated Salary: " + employSalary.getSalary());
+        System.out.println("update the name of the employee ");
+        employSalary.update("alexxxxtest", 2, 5222);
+       employSalary.printDetails();
+
+
+        System.out.println("\n *** before overloed method");
+
+        employ1.update("sandra", 5);
+
 
 
 

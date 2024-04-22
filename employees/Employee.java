@@ -43,11 +43,38 @@ public class Employee {
         this.salary = salary;
     }
 
+
+    //save to database:
+    private void saveToDataBase() {
+        System.out.format("Saving to database the new name: %s", name);
+
+
+    }
+
+    //Method overloading
+    public void update(String name) {
+        System.out.println("update only name");
+        setName(name);
+
+        saveToDataBase();
+    }
+
+    public void update(String name, double experience) {
+        System.out.println("update name and experience");
+        setName(name);
+        setExperience(experience);
+
+        saveToDataBase();
+    }
+
+
     //update method for all properties of the object
     public void update(String name, double experience, double salary) {
         setName(name);
         setExperience(experience);
         setSalary(salary);
+
+        saveToDataBase();
     }
 
     //calculate bonus
@@ -59,7 +86,7 @@ public class Employee {
     };
 
     //calculate increment
-    public double claculauteIncrement() {
+    public double calculateIncrement() {
         double increment;
         if(salary < 65000) {
             increment = 0.1;
@@ -72,6 +99,8 @@ public class Employee {
         return increment;
 
     }
+
+
 
 
 
